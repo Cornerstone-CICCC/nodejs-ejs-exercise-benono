@@ -1,0 +1,23 @@
+<%- include('partials/header', { desc: "This is the contact me page." }) %>
+
+<h1><%= title %></h1>
+<p>This is my contact info</p>
+<ul>
+  <li>Name: <%= contact.name || 'John Doe' %></li>
+  <li>Email: <%= contact.email %></li>
+  <li>Tel: <%= contact.tel %></li>
+  <li>Address: <%= contact.address %></li>
+</ul>
+
+<form action="/api/contact/email" method="POST">
+  <label>
+    <span>Title:</span>
+    <input type="text" name="title" placeholder="Give me a job!" />
+  </label>
+  <label>
+    <span>Text:</span>
+    <input type="textarea" name="text" />
+  </label>
+  <button type="submit">Send Email to me</button>
+</form>
+<%- include('partials/footer') %>
